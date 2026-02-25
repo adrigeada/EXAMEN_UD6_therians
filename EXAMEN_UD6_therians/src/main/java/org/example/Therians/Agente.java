@@ -41,11 +41,6 @@ public class Agente extends Persona implements AccionesPoliciales{
 
     @Override
     public Ciudadano solicitarDatosCiudadano() {
-        return null;
-    }
-
-    @Override
-    public Expediente crearExpediente() {
         System.out.println("Bienvenido "+getNombre());
         System.out.println("\nCreando expediente");
         System.out.println("Introduce los datos del Ciudadano a registrar");
@@ -57,6 +52,13 @@ public class Agente extends Persona implements AccionesPoliciales{
         String dni = teclado.nextLine();
 
         Ciudadano ciudadano = new Ciudadano(nombre,poblacion,dni);
+        return ciudadano;
+    }
+
+    @Override
+    public Expediente crearExpediente() {
+        Ciudadano ciudadano = solicitarDatosCiudadano();
+
         Expediente expediente = new Expediente(ciudadano);
 
         System.out.println("Expediente para el ciudadano "+ciudadano.getNombre()+" creado.");
@@ -101,7 +103,7 @@ public class Agente extends Persona implements AccionesPoliciales{
 
 
 
-    public boolean login(){ //Lo llamo con un agente creado en el main. Se comprueba que lo insertado por teclado son los mismos que los de este agente, que es el que le ha llamado. 
+    public boolean login(){ //Lo llamo con un agente creado en el main. Se comprueba que lo insertado por teclado son los mismos que los de este agente, que es el que le ha llamado.
 
         boolean control = false;
 

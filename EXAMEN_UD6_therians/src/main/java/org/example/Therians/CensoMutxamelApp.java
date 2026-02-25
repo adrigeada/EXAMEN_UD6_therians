@@ -25,12 +25,14 @@ public class CensoMutxamelApp {
             System.out.println("Bienvenido "+raul.getNombre());
         }
 
+
         Expediente expediente = raul.crearExpediente();
         listaExpedientes.add(expediente);
 
         expediente.insertarSeres();
         raul.siguienteEstado(expediente);
 
+        //Se intenta archivar un expediente no pagado. Salta la excepcion creada y la cojo con tryCatch
         try {
             raul.archivarExpediente(expediente);
         }catch (ExpedienteNoPagadoException e){
