@@ -18,8 +18,10 @@ public class Agente extends Persona implements AccionesPoliciales{
         setId();
     }
 
-//    public Agente(int id,int codigo_acceso){
-//        super();
+//    public Agente(int id,int codigo_acceso){  No se como crear un Agente con este constructor en login
+//        super(null,null);
+//        this.id = id;
+//        this.codigo_acceso = codigo_acceso;
 //
 //    }
 
