@@ -101,7 +101,7 @@ public class Agente extends Persona implements AccionesPoliciales{
 
 
 
-    public boolean login(){
+    public boolean login(){ //Lo llamo con un agente creado en el main. Se comprueba que lo insertado por teclado son los mismos que los de este agente, que es el que le ha llamado. 
 
         boolean control = false;
 
